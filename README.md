@@ -37,15 +37,9 @@ Deploying a self-hosted / on-premise version of Highlight.
 chmod 400 my-key-pair.pem && ssh -i "my-key-pair.pem" ubuntu@ec2.something.compute.amazonaws.com
 ```
 
-You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there). 2. Clone this repo on the machine:
+You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there).
 
 2. Clone this repo on the remote instance with: `git clone https://github.com/highlight-run/highlight-onpremise.git`
 3. `cd highlight-onpremise/`
-4. Run these commands:
-   `chmod u+x ./*`
-   `sudo groupadd docker`
-   `sudo usermod -aG docker ${USER}`
-5. Logout of your shell and ssh back in.
-6. Run these commands:
-   `docker build -t highlight .`
-   `docker build -t highlight .`
+4. Run: `./scripts/setup-docker.sh`
+
