@@ -7,7 +7,7 @@ Deploying a self-hosted / on-premise version of Highlight.
 2. Select Ubuntu Server 20.04 LTS (x86)
 3. Select the instance type. You should choose at least t2.large as we need at least 8GB of RAM.
 4. Give the instance at least 10gb of disk.
-5. Make sure that the DB is running in a VPC that you can connect the DB to later.
+5. Make sure that the DB is running in a VPC that you can connect the DB to later (the default should be fine).
 6. Create and download a key pair.
 ![image](https://user-images.githubusercontent.com/20292680/116502242-41e0ff00-a870-11eb-923b-906e9ae4d22a.png)
 6. Launch your instanace!
@@ -18,4 +18,9 @@ Deploying a self-hosted / on-premise version of Highlight.
 2. Select PostgreSQL as the database type.
 3. The exact configuration of the database is up to you. Using the default from the "dev/test" setting with atleast 100gb of disk space should be sufficient. 
 4. Make sure that the DB is running in the same VPC as the EC2 instance.
+
+## Running the Binary
+1. With your key pair on your local machine, run:
+   `chmod 400 my-key-pair.pem && ssh -i "my-key-pair.pem" ubuntu@ec2.something.compute.amazonaws.com`
+    You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there).
 
