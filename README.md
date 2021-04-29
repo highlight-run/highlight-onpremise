@@ -24,7 +24,9 @@ Deploying a self-hosted / on-premise version of Highlight.
 
 ## Running the Binary
 1. With your key pair on your local machine, run:
-```chmod 400 my-key-pair.pem && ssh -i "my-key-pair.pem" ubuntu@ec2.something.compute.amazonaws.com```
+```bash
+chmod 400 my-key-pair.pem && ssh -i "my-key-pair.pem" ubuntu@ec2.something.compute.amazonaws.com
+```
 You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there).
 2. Clone this repo on the machine: `git clone https://github.com/highlight-run/highlight-onpremise.git`
 3. In the `highlight-onpremise` directory, run:
