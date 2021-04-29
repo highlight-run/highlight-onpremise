@@ -32,9 +32,11 @@ You will need to edit the above command to match the path and name of your `.pem
 ```bash
 git clone https://github.com/highlight-run/highlight-onpremise.git
 ```
-3. In the `highlight-onpremise` directory, run:
+3. In the `highlight-onpremise` directory, run the following commands:
 ```bash
 chmod u+x ./scripts/*
+```
+```bash
 ./scripts/get-docker.sh
 ```
 
