@@ -10,12 +10,16 @@ Deploying a self-hosted / on-premise version of Highlight.
 3. Select the instance type. You should choose at least t2.large as we need at least 8GB of RAM.
 4. Give the instance at least 10gb of disk.
 5. Make sure that the DB is running in a VPC that you can connect the DB to later (the default should be fine).
-6. Add security groups for inbound HTTP and HTTPS traffic to your instance as follows:
-![image](https://user-images.githubusercontent.com/20292680/116575188-a7aea480-a8cb-11eb-977d-582736c1e592.png)
 
-6. Create and download a key pair.
+   > NOTE: AWS will prompt you to optionally create a new VPC for this ec2 instance.
+   > This is what we recommend. If you'd like to use an existing VPC, make sure that the instance will have be able to be hit from a public IP on HTTP/HTTPS/SSH.
+
+6. Add security groups for inbound HTTP and HTTPS traffic to your instance as follows:
+   ![image](https://user-images.githubusercontent.com/20292680/116575188-a7aea480-a8cb-11eb-977d-582736c1e592.png)
+
+7. Create and download a key pair.
    ![image](https://user-images.githubusercontent.com/20292680/116502242-41e0ff00-a870-11eb-923b-906e9ae4d22a.png)
-7. Launch your instanace!
+8. Launch your instanace!
 
 ## Configuring a Database
 
@@ -28,28 +32,12 @@ Deploying a self-hosted / on-premise version of Highlight.
 ## Running the Binary
 
 1. With your key pair on your local machine, run:
+
 ```bash
 chmod 400 my-key-pair.pem && ssh -i "my-key-pair.pem" ubuntu@ec2.something.compute.amazonaws.com
 ```
-You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there).
-2. Clone this repo on the machine: 
-```bash
-git clone https://github.com/highlight-run/highlight-onpremise.git
-```
-3. In the `highlight-onpremise` directory, run the following commands:
-```bash
-chmod u+x ./scripts/*
-```
-```bash
-./scripts/get-docker.sh
-```
 
-
-
-
->>>>>>> 897ab7fad70df6b77df11241acc82eeac2340653
-
-   You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there).
+You will need to edit the above command to match the path and name of your `.pem` key file as well as the public dns url of your ec2 instance. The username for any ubuntu ec2 instance is `ubuntu` (so no changes required there). 2. Clone this repo on the machine:
 
 2. Clone this repo on the remote instance with: `git clone https://github.com/highlight-run/highlight-onpremise.git`
 3. `cd highlight-onpremise/`
