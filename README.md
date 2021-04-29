@@ -8,6 +8,9 @@ Deploying a self-hosted / on-premise version of Highlight.
 3. Select the instance type. You should choose at least t2.large as we need at least 8GB of RAM.
 4. Give the instance at least 10gb of disk.
 5. Make sure that the DB is running in a VPC that you can connect the DB to later (the default should be fine).
+6. Add security groups for inbound HTTP and HTTPS traffic to your instance as follows:
+![image](https://user-images.githubusercontent.com/20292680/116575188-a7aea480-a8cb-11eb-977d-582736c1e592.png)
+
 6. Create and download a key pair.
 ![image](https://user-images.githubusercontent.com/20292680/116502242-41e0ff00-a870-11eb-923b-906e9ae4d22a.png)
 6. Launch your instanace!
