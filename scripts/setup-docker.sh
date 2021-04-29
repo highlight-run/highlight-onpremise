@@ -8,7 +8,7 @@ if ! command_present wget && command_present yum; then
 fi
 wget -qO- https://get.docker.com/ | sh
 echo "[highlight] Installing docker compose"
-sudo -E curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo -E curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 echo "[highlight] Giving permissions to docker binaries"
 sudo chmod +x /usr/local/bin/docker-compose
 echo "[highlight] Creating docker user group"
