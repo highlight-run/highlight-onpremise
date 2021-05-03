@@ -32,7 +32,7 @@ services:
     networks:
       - highlight
     environment: 
-      REACT_APP_ONPREM: true
+      REACT_APP_ONPREM: "true"
       ONPREM_STATIC_FRONTEND_PATH: "./build"
       PSQL_HOST: "database"
       PSQL_PORT: "5432"
