@@ -1,6 +1,7 @@
 version: "3.7"
 
-# Create a new file called `environment.yml` and copy these contents there.
+# Create a new file called `environment.yml`, copy these contents there, 
+# and use the secrets generated from instructions at docs.highlight.run to fill out the values.
 services:
   env:
     environment:
