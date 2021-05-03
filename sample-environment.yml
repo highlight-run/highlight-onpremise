@@ -1,5 +1,6 @@
 version: "3.7"
 
+# Create a new file called `environment.yml` and copy these contents there.
 services:
   env:
     environment:
