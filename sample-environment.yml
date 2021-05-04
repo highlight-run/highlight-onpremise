@@ -1,0 +1,30 @@
+version: "3.7"
+
+# Create a new file called `environment.yml`, copy these contents there, 
+# and use the secrets generated from instructions at docs.highlight.run to fill out the values.
+services:
+  env:
+    environment:
+      DEPLOYMENT_KEY: "--"
+      FIREBASE_SECRET: |
+        {
+          "type": "--",
+          "project_id": "--",
+          "private_key_id": "--",
+          "private_key": "--",
+          "client_email": "--",
+          "client_id": "--",
+          "auth_uri": "--",
+          "token_uri": "--",
+          "auth_provider_x509_cert_url": "--",
+          "client_x509_cert_url": "--"
+        }
+      REACT_APP_FIREBASE_CONFIG_OBJECT: |
+        {
+          apiKey: "--",
+          authDomain: "--",
+          projectId: "--",
+          storageBucket: "--",
+          messagingSenderId: "--",
+          appId: "--"
+        }
