@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  database:     
+  database:
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "password"
@@ -15,6 +15,8 @@ services:
       - "5432:5432"
     volumes:
       - data:/var/lib/postgresql/data
+    networks:
+      - web-network
   server:
     container_name: server
     extends:
@@ -23,15 +25,57 @@ services:
     image: highlightrun/highlight:latest
     depends_on:
       - database
-    ports:
-      - "80:8082"
-    environment: 
+    environment:
       REACT_APP_ONPREM: "true"
       ONPREM_STATIC_FRONTEND_PATH: "./build"
+      ENABLE_OBJECT_STORAGE: "true"
       PSQL_HOST: "database"
       PSQL_PORT: "5432"
       PSQL_USER: "postgres"
       PSQL_DB: "postgres"
       PSQL_PASSWORD: "password"
+    networks:
+      - web-network
+  nginx:
+    image: nginx:mainline-alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - web-root:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - dhparam:/etc/ssl/certs
+    depends_on:
+      - server
+    networks:
+      - web-network
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/var/www/html
+    depends_on:
+      - nginx
+    # command: certonly --webroot --webroot-path=/var/www/html --email EMAIL --agree-tos --force-renewal --no-eff-email -d onprem.highlight.run
+    command: certonly --webroot --webroot-path=/var/www/html --email EMAIL --agree-tos  --staging --no-eff-email -d DOMAIN
 volumes:
   data:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+  dhparam:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/ubuntu/highlight-onpremise/dhparam
+      o: bind
+networks:
+  web-network:
+    driver: bridge
