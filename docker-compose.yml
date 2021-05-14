@@ -62,7 +62,8 @@ services:
       - web-root:/var/www/html
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email jay@highlight.run --agree-tos --force-renewal --no-eff-email -d onprem.highlight.run
+    # command: certonly --webroot --webroot-path=/var/www/html --email EMAIL --agree-tos --force-renewal --no-eff-email -d onprem.highlight.run
+    command: certonly --webroot --webroot-path=/var/www/html --email EMAIL --agree-tos  --staging --no-eff-email -d DOMAIN
 volumes:
   data:
   certbot-etc:
