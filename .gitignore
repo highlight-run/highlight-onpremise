@@ -1,3 +1,4 @@
 .env
 environment.yml
 dhparam/
+nginx.conf
