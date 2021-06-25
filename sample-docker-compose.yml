@@ -63,7 +63,7 @@ services:
     depends_on:
       - nginx
     ## ATTENTION: get rid of '--staging' in the below line for a production ssl cert.
-    command: certonly --webroot --webroot-path=/var/www/html --email COMPANY_EMAIL --agree-tos  --staging --force-renewal --no-eff-email -d COMPANY_DOMAIN
+    command: certonly --webroot --webroot-path=/var/www/html --email COMPANY_EMAIL --agree-tos  --staging --keep-until-expiring --no-eff-email -d COMPANY_DOMAIN
 volumes:
   data:
   certbot-etc:
