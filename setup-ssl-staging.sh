@@ -9,5 +9,3 @@ read company_email
 echo "[highlight] Templating docker compose file..."
 sed -e "s/COMPANY_DOMAIN/$company_domain/g" -e "s/COMPANY_EMAIL/$company_email/g" 'sample-docker-compose.yml' > 'docker-compose.yml'
 echo "[highlight] Done!"
-
-
