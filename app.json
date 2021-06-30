@@ -9,9 +9,6 @@
             "options": {
                 "version": "9.6"
             }
-        },
-        {
-            "plan": "bucketeer"
         }
     ]
 }
