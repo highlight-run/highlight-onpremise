@@ -1,0 +1,14 @@
+{
+    "name": "highlight",
+    "description": "Highlight heroku",
+    "stack": "container",
+    "env": {},
+    "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "9.6"
+            }
+        }
+    ]
+}
