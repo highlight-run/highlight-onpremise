@@ -1,3 +1,3 @@
 FROM highlightrun/highlight:latest
 
-CMD ./bin/backend
+CMD ["ls /bin", "&&", "./bin/backend"]
