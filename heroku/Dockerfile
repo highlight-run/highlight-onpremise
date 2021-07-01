@@ -2,4 +2,4 @@ FROM highlightrun/highlight:latest
 
 WORKDIR /root/
 
-CMD ["ls", "-a"]
+CMD ["ls", "-a", "/"]
