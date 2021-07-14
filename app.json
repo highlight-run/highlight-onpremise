@@ -2,7 +2,34 @@
     "name": "highlight",
     "description": "Highlight heroku",
     "stack": "container",
-    "env": {},
+    "env": {
+        "DEPLOYMENT_KEY": {
+            "description": "If you haven't received this from one of our team members, please contact sales@highlight.run for your deployment key."
+        },
+        "FIREBASE_SECRET": {
+            "description": "Your secret generated from firebase - see how to get it at https://docs.highlight.run/docs/authentication-1."
+        },
+        "REACT_APP_FIREBASE_CONFIG_OBJECT": {
+            "description": "Your app config object generated from firebase - see how to get it at https://docs.highlight.run/docs/authentication-1."
+        },
+        "AWS_ACCESS_KEY_ID": {
+            "description": "Your aws access key id - see how to get it at https://docs.highlight.run/docs/authentication-1."
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+	        "description": "Your aws secret access key - see how to get it at https://docs.highlight.run/docs/authentication-1."
+        },
+        "AWS_S3_BUCKET_NAME": {
+	        "description": "Your aws s3 bucket name - see how to get it at https://docs.highlight.run/docs/authentication-1."
+        },
+        "ONPREM_STATIC_FRONTEND_PATH": {
+            "description": "This is needed for the app to work, do not change this.",
+            "default": "./build"
+        },
+        "REACT_APP_ONPREM": {
+            "description": "This is needed for the app to work, do not change this.",
+            "default": "true"
+        }
+    },
     "addons": [
         {
             "plan": "heroku-postgresql",
