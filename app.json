@@ -13,7 +13,8 @@
             "description": "Your app config object generated from firebase - see how to get it at https://docs.highlight.run/docs/authentication-1."
         },
         "ENABLE_OBJECT_STORAGE": {
-            "description": "Set this to `true` if you want to enable object storage in S3. If you do, you have to set all AWS_* config vars.",
+            "description": "Set this to `false` if you want to disable object storage in S3. If set to `true`, you have to set all AWS_* config vars.",
+            "value": true,
             "required": false
         },
         "AWS_ACCESS_KEY_ID": {
