@@ -23,11 +23,11 @@
         },
         "ONPREM_STATIC_FRONTEND_PATH": {
             "description": "This is needed for the app to work, do not change this.",
-            "default": "./build"
+            "value": "./build"
         },
         "REACT_APP_ONPREM": {
             "description": "This is needed for the app to work, do not change this.",
-            "default": "true"
+            "value": "true"
         }
     },
     "addons": [
