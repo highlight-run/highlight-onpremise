@@ -25,7 +25,10 @@
             "description": "This is needed for the app to work, do not change this.",
             "value": "./build"
         },
-        "REACT_APP_ONPREM": "true"
+        "REACT_APP_ONPREM": {
+            "description": "This is needed for the app to work, do not change this.",
+            "value": "true"
+        }
     },
     "addons": [
         {
