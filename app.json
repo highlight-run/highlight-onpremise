@@ -12,22 +12,14 @@
         "REACT_APP_FIREBASE_CONFIG_OBJECT": {
             "description": "Your app config object generated from firebase - see how to get it at https://docs.highlight.run/docs/authentication-1."
         },
-        "ENABLE_OBJECT_STORAGE": {
-            "description": "Set this to `false` if you want to disable object storage in S3. If set to `true`, you have to set all AWS_* config vars.",
-            "value": true,
-            "required": false
-        },
         "AWS_ACCESS_KEY_ID": {
             "description": "Your aws access key id - see how to get it at https://docs.highlight.run/docs/authentication-1.",
-            "required": false
         },
         "AWS_SECRET_ACCESS_KEY": {
 	        "description": "Your aws secret access key - see how to get it at https://docs.highlight.run/docs/authentication-1.",
-            "required": false
         },
         "AWS_S3_BUCKET_NAME": {
 	        "description": "Your aws s3 bucket name - see how to get it at https://docs.highlight.run/docs/authentication-1.",
-            "required": false
         }
     },
     "addons": [
