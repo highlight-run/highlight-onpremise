@@ -20,14 +20,6 @@
         },
         "AWS_S3_BUCKET_NAME": {
 	        "description": "Your aws s3 bucket name - see how to get it at https://docs.highlight.run/docs/authentication-1."
-        },
-        "ONPREM_STATIC_FRONTEND_PATH": {
-            "description": "This is needed for the app to work, do not change this.",
-            "value": "./build"
-        },
-        "REACT_APP_ONPREM": {
-            "description": "This is needed for the app to work, do not change this.",
-            "value": "true"
         }
     },
     "addons": [
