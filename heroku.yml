@@ -1,6 +1,3 @@
 build:
   docker:
     web: ./heroku/Dockerfile
-  config:
-    ONPREM_STATIC_FRONTEND_PATH: ./build
-    REACT_APP_ONPREM: true
