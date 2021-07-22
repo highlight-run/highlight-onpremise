@@ -1,33 +1,36 @@
 {
-    "name": "highlight",
-    "description": "Highlight heroku",
-    "stack": "container",
-    "env": {
-        "DEPLOYMENT_KEY": {
-            "description": "If you haven't received this from one of our team members, please contact sales@highlight.run for your deployment key."
-        },
-        "FIREBASE_SECRET": {
-            "description": "Your secret generated from firebase - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
-        },
-        "REACT_APP_FIREBASE_CONFIG_OBJECT": {
-            "description": "Your app config object generated from firebase - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
-        },
-        "AWS_ACCESS_KEY_ID": {
-            "description": "Your aws access key id - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
-        },
-        "AWS_SECRET_ACCESS_KEY": {
-	        "description": "Your aws secret access key - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
-        },
-        "AWS_S3_BUCKET_NAME": {
-	        "description": "Your aws s3 bucket name - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
-        }
+  "name": "highlight",
+  "description": "Highlight heroku",
+  "stack": "container",
+  "env": {
+    "DEPLOYMENT_KEY": {
+      "description": "If you haven't received this from one of our team members, please contact sales@highlight.run for your deployment key."
     },
-    "addons": [
-        {
-            "plan": "heroku-postgresql",
-            "options": {
-                "version": "10"
-            }
-        }
-    ]
+    "FIREBASE_SECRET": {
+      "description": "Your secret generated from firebase - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
+    },
+    "REACT_APP_FIREBASE_CONFIG_OBJECT": {
+      "description": "Your app config object generated from firebase - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "description": "Your aws access key id - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "Your aws secret access key - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
+    },
+    "AWS_S3_BUCKET_NAME": {
+      "description": "Your aws s3 bucket name - see how to get it at https://docs.highlight.run/docs/on-premise#heroku-deployment."
+    },
+    "FRONTEND_URI": {
+      "description": "Your highlight apps' frontend uri. If you are using the heroku domain, it will be https://{app_name}.herokuapp.com (no trailing slash). Example: 'https://on-premise.herokuapp.com'"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "10"
+      }
+    }
+  ]
 }
